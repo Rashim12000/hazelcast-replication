@@ -25,13 +25,36 @@
     for the name, default config will be used.
 
     -->
-    <!--    <cache name="*">-->
-    <!--        <statistics-enabled>true</statistics-enabled>-->
-    <!--        <management-enabled>true</management-enabled>-->
-    <!--    </cache>-->
-    <!--    <cache name="customer_login">-->
-    <!--        <statistics-enabled>true</statistics-enabled>-->
-    <!--        <management-enabled>true</management-enabled>-->
-    <!--    </cache>-->
+    <cache name="customer">
+        <key-type class-name="java.lang.String"/>
+        <value-type class-name="java.lang.Object"/>
+        <statistics-enabled>true</statistics-enabled>
+        <management-enabled>true</management-enabled>
+    </cache>
+    <cache name="customer_login">
+        <key-type class-name="java.lang.String"/>
+        <value-type class-name="java.lang.Object"/>
+        <statistics-enabled>true</statistics-enabled>
+        <management-enabled>true</management-enabled>
+    </cache>
 
+    <cache name="default-query-results-region">
+        <statistics-enabled>true</statistics-enabled>
+        <management-enabled>true</management-enabled>
+    </cache>
+
+
+    <!--    <map name="default-query-results-region">-->
+    <!--        &lt;!&ndash;        <max-size>1000</max-size>&ndash;&gt;-->
+    <!--        <time-to-live-seconds>10</time-to-live-seconds>-->
+    <!--    </map>-->
+
+    <!--    <map name="customer">-->
+    <!--        &lt;!&ndash;        <max-size>1000</max-size>&ndash;&gt;-->
+    <!--        <time-to-live-seconds>10</time-to-live-seconds>-->
+    <!--    </map>-->
+    <!--    <map name="customer-login">-->
+    <!--        &lt;!&ndash;        <max-size>1000</max-size>&ndash;&gt;-->
+    <!--        <time-to-live-seconds>10</time-to-live-seconds>-->
+    <!--    </map>-->
 </hazelcast>

@@ -17,7 +17,7 @@ public class CustomerDAO {
     public Customer findByCustomerId(long id) {
         Query query = entityManager.createQuery("select t from Customer t where t.id =:id");
         query.setParameter("id", id);
-//        query.setHint("org.hibernate.cacheable", true);
+        query.setHint("org.hibernate.cacheable", true);
 
         return (Customer) query.getSingleResult();
     }
