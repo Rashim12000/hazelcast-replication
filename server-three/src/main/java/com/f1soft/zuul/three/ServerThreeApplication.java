@@ -2,7 +2,6 @@ package com.f1soft.zuul.three;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.hazelcast.HazelcastAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @ComponentScan(basePackages = {"com.f1soft"})
 @EnableCaching
-@SpringBootApplication(exclude = HazelcastAutoConfiguration.class)
+@SpringBootApplication
 public class ServerThreeApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

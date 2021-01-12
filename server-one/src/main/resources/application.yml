@@ -1,13 +1,8 @@
 app:
   name: Zuul Proxy
 spring:
-
   profiles.active: dev
   main.allow-bean-definition-overriding: true
-  cache:
-    ehcache:
-      config: classpath:ehcache.xml
-    type: ehcache
 
 server:
   port: 9091

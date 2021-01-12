@@ -11,8 +11,8 @@
     <modules>
         <module>server-data</module>
         <module>server-one</module>
-        <module>server-two</module>
-        <module>server-three</module>
+        <!--        <module>server-two</module>-->
+        <!--        <module>server-three</module>-->
     </modules>
 
     <parent>
@@ -56,33 +56,21 @@
         </dependency>
 
         <dependency>
-            <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast</artifactId>
-            <version>4.1.1</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-hibernate-53</artifactId>
+            <version>3.12.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jdbc</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast-spring</artifactId>
-            <version>4.1.1</version>
-        </dependency>
 
-        <dependency>
-            <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast-hibernate53</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.cache</groupId>
-            <artifactId>cache-api</artifactId>
-            <version>1.1.1</version>
-        </dependency>
     </dependencies>
 
 </project>
