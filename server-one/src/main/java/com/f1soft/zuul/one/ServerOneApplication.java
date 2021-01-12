@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {"com.f1soft"})
 @EnableJpaRepositories(basePackages = {"com.f1soft"})
 @EnableCaching
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.f1soft"})
 public class ServerOneApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

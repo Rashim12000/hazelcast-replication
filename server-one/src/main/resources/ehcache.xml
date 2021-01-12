@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true" name="banksmart-ehcache">
+
+    <cacheManagerPeerProviderFactory
+            class="com.f1soft.zuul.fonepay.config.JGroupsCacheManagerPeerProviderFactory"
+            properties="file=tcp.xml"/>
+
+
+    <defaultCache
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            diskSpoolBufferSizeMB="20"
+            timeToIdleSeconds="1" timeToLiveSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            transactionalMode="off">
+        <persistence strategy="none"/>
+        <cacheEventListenerFactory
+                class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+                properties="replicateAsynchronously=false, replicatePuts=true,
+            replicateUpdates=true, replicateUpdatesViaCopy=false,
+            replicateRemovals=true"/>
+    </defaultCache>
+
+    <cache name="org.hibernate.cache.internal.StandardQueryCache"
+           maxEntriesLocalHeap="30000"
+           eternal="false"
+           diskSpoolBufferSizeMB="30"
+           timeToIdleSeconds="1000" timeToLiveSeconds="120"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <cacheEventListenerFactory
+                class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+                properties="replicateAsynchronously=true,
+                 replicatePuts=true,
+                 replicateUpdates=true,
+                 replicateUpdatesViaCopy=false,
+                 replicateRemovals=true"/>
+    </cache>
+
+    <cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+           maxEntriesLocalHeap="30000"
+           eternal="true"
+           diskSpoolBufferSizeMB="30"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <cacheEventListenerFactory
+                class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+                properties="replicateAsynchronously=true,
+                 replicatePuts=true,
+                 replicateUpdates=true,
+                 replicateUpdatesViaCopy=false,
+                 replicateRemovals=true"/>
+    </cache>
+
+    <cache name="customer"
+           maxEntriesLocalHeap="30000"
+           eternal="false"
+           diskSpoolBufferSizeMB="30"
+           timeToIdleSeconds="1000" timeToLiveSeconds="120"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <cacheEventListenerFactory
+                class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+                properties="replicateAsynchronously=true,
+                 replicatePuts=true,
+                 replicateUpdates=true,
+                 replicateUpdatesViaCopy=false,
+                 replicateRemovals=true"/>
+    </cache>
+
+    <cache name="customer_login"
+           maxEntriesLocalHeap="30000"
+           eternal="false"
+           diskSpoolBufferSizeMB="30"
+           timeToIdleSeconds="1000" timeToLiveSeconds="120"
+           memoryStoreEvictionPolicy="LRU"
+           transactionalMode="off">
+        <persistence strategy="none"/>
+        <cacheEventListenerFactory
+                class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+                properties="replicateAsynchronously=true,
+                 replicatePuts=true,
+                 replicateUpdates=true,
+                 replicateUpdatesViaCopy=false,
+                 replicateRemovals=true"/>
+    </cache>
+
+</ehcache>
