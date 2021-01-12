@@ -54,6 +54,4 @@ spring:
       hibernate.order_updates: true
       hibernate.jdbc.batch_versioned_data: true
       org.hibernate.envers.audit_table_suffix: _history
-      hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastLocalCacheRegionFactory
-      hibernate.cache.hazelcast.instance_name: bankxp_instance
-#      hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastLocalCacheRegionFactory
+      hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
